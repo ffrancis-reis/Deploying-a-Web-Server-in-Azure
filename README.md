@@ -18,7 +18,7 @@ This project consists in a Packer template and a Terraform template to deploy a 
 4. Install [Terraform](https://www.terraform.io/downloads.html)
 5. You need to create an App registration in your Azure subscription so that you can use its client_id and client_secret as well as your subscription_id as environment variables
 
-**Important** The commands used in this project were applied into Windows Power powershell from a Windows 10 desktop. Hence the usage of the **( \` ) ** backtick to line break the code.
+**Important** The commands used in this project were applied into Windows Power powershell from a Windows 10 desktop. Hence the usage of the **( \` )** backtick to line break the code.
 
 ### Instructions
 
