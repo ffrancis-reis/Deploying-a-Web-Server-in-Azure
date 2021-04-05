@@ -54,7 +54,8 @@ For this project, you will write a Packer template and a Terraform template to d
   az policy assignment list
 ```
 
-4. Validate and create an image with Packer. The file **server.json** in this project have a pre-defined code for a Linux Ubuntu image, to be built with Packer. You need to create a resource grupo on Azure platform prior to the image, so that it can be associated with this resource group. Here is an example of powershell commands to do it:
+4. Validate and create an image with Packer. The file **server.json** in this project have a pre-defined code for a Linux Ubuntu image, to be built with Packer.
+    - You need to create a resource grupo on Azure platform prior to the image, so that it can be associated with this resource group. Here is an example of powershell commands to do it:
 
 ```powershell
   az group create `
