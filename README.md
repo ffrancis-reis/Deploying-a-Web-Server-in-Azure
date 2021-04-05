@@ -54,7 +54,7 @@ For this project, you will write a Packer template and a Terraform template to d
   az policy assignment list
 ```
 
-4. Validate and create an image with Packer. The file "server.json" in this project have a pre-defined code for a Linux Ubuntu image, to be built with Packer. You need to create a resource grupo on Azure platform prior to the image, so that it can be associated with this resource group. Here is an example of powershell commands to do it:
+4. Validate and create an image with Packer. The file **server.json** in this project have a pre-defined code for a Linux Ubuntu image, to be built with Packer. You need to create a resource grupo on Azure platform prior to the image, so that it can be associated with this resource group. Here is an example of powershell commands to do it:
 
 ```powershell
   az group create `
@@ -67,7 +67,7 @@ For this project, you will write a Packer template and a Terraform template to d
   packer build server.json
 ```
 
-5. Check if your image has been created on your Azure portal. You can delete the image with the powershell command below. Attention to its name with the packer file (server.json):
+5. Check if your image has been created on your Azure portal. You can delete the image with the powershell command below. Attention to its name with the packer file **server.json**:
 
 ```powershell
   az image delete `
@@ -75,7 +75,11 @@ For this project, you will write a Packer template and a Terraform template to d
     -n "ubuntuImage"
 ```
 
-6. Initialize the Terraform tool, plan and deploy your infra as a code. The files "main.tf" and "vars.tf" in this project contains a pre-defined code for all Azure resources of a scalable web service infrastructure. You will be prompted to input some info regarding your infa, like the name of the resource group in which all of the resources will be associated, and also how many virtual machines you want to be created. These variables are defined on the "vars.tf" file. Also, in the "vars.tf" file you can specify another specific variable that you want without the default property so that it wil asked for input. The "main.tf" file also have specified that the max amount of VMs that will be created is 5, for cost reduztion purpose. With the example powershell commands below you can deploy it on your Azure subscription:
+6. Initialize the Terraform tool, plan and deploy your infra as a code. The files **main.tf** and **vars.tf** in this project contains a pre-defined code for all Azure resources of a scalable web service infrastructure. 
+    - You will be prompted to **input** some info regarding your infra, like the name of the resource group in which all of the resources will be associated, and also how many virtual machines you want to be created. These variables are defined on the **vars.tf** file.
+    - Also, in the "vars.tf" file you can specify another specific variable that you want without the **default** property so that it wil asked for input.
+    - The **main.tf** file also have specified that the max amount of VMs that will be created is **5**, for cost reduction purpose.
+    - With the example powershell commands below you can deploy the infra on your Azure subscription:
 
 ```powershell
   terraform init
@@ -99,4 +103,7 @@ For this project, you will write a Packer template and a Terraform template to d
 
 ### Output
 
-Here is an example of the Azure resources that will be created by specifying "web-server" as the prefix and "3" as the quantity of VMs.
+Here is an example of the Azure resources that will be created by specifying **web-service** as the prefix and **3** as the quantity of VMs.
+
+![image](https://user-images.githubusercontent.com/29313947/113633728-d1193f00-9643-11eb-8743-7a96917e1581.png)
+
