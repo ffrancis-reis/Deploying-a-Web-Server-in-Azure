@@ -2,14 +2,12 @@
 
 ### Introduction
 
-For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
+This project consists in a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
 
 ### Getting Started
 
 1. Clone this repository
-
 2. Create your infrastructure as code
-
 3. Deploy it with Packer and Terraform tools by using Windows Power Shell commands.
 
 ### Dependencies
