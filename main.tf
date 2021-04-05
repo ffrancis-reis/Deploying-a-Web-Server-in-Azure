@@ -75,7 +75,8 @@ resource "azurerm_network_security_rule" "deny-internet" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "${var.prefix}-nic"
+  count               = var.vm-count > 5 ? 5 : var.vm-count
+  name                = "${var.prefix}-nic-${count.index}"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
 
@@ -139,7 +140,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   name                            = "${var.prefix}-vm-${count.index}"
   resource_group_name             = azurerm_resource_group.main.name
   location                        = azurerm_resource_group.main.location
-  network_interface_ids           = [azurerm_network_interface.main.id]
+  network_interface_ids           = [azurerm_network_interface.main[count.index].id]
   size                            = "Standard_B1ls"
   admin_username                  = "alphaadmin"
   admin_password                  = "alphaP@ss"
