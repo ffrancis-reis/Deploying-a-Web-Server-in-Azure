@@ -142,8 +142,8 @@ resource "azurerm_linux_virtual_machine" "main" {
   location                        = azurerm_resource_group.main.location
   network_interface_ids           = [azurerm_network_interface.main[count.index].id]
   size                            = "Standard_B1ls"
-  admin_username                  = "alphaadmin"
-  admin_password                  = "alphaP@ss"
+  admin_username                  = var.vm-admin-username
+  admin_password                  = var.vm-admin-password
   disable_password_authentication = false
   source_image_id                 = data.azurerm_image.main.id
 
